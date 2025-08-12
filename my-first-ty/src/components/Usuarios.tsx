@@ -25,7 +25,7 @@ export const Usuarios = () => {
 
   return (
     <div className="mt-5">
-      <h3>Usuarios: useState</h3>
+      <h3>Usuarios</h3>
       <button className="btn btn-outline-primary" onClick={login}>Login</button>
 
       <pre>{ JSON.stringify( usuarios) }</pre>
