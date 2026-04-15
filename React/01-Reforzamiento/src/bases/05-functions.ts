@@ -27,3 +27,22 @@ console.log(resultado);
 console.log(resultado2);
 console.log(user);
 console.log(user2);
+
+// Ejemplo de interfaz 
+
+interface Vehiculo {
+    marca: string;
+    modelo: string;
+    year: number;
+}
+
+function crearVehiculo (marca: string, modelo: string, year: number) : Vehiculo {
+    return {
+        marca,
+        modelo,
+        year
+    }
+}
+
+const miVehiculo = crearVehiculo('Toyota', 'Corolla', 2020);
+console.log(miVehiculo);
