@@ -12,4 +12,27 @@ person02.name = 'Mauricio';
 person02.lastName = 'Morales';
 person02.age = 27;
 
-console.log(person01, person02);
+
+// Interfaces...
+
+interface Person { // Esta no tiene un equivalente a algo ya existente en JavaScript, es una estructura que nos permite definir un contrato para un objeto, es decir, nos permite definir qué propiedades y métodos debe tener un objeto para cumplir con ese contrato. En este caso, estamos definiendo una interfaz llamada Person que tiene tres propiedades: name, lastName y age, todas ellas son de tipo string o number.
+    //Este solo es un molde y se acostumbra que empieze con mayuscula, pero no es obligatorio.
+    name: string;
+    lastName: string;
+    age: number;
+    address?: { // El signo de interrogación indica que esta propiedad es opcional, es decir, un objeto que cumpla con el contrato de la interfaz Person no necesariamente tiene que tener la propiedad address, pero si la tiene, debe ser de tipo string.
+        street: string;
+        city: string;
+        country: string;
+    } // Esto no lo más correcto lo ideal sería crear una nueva interfaz para la dirección, pero lo estamos haciendo de esta manera para mostrar que también podemos tener objetos anidados dentro de un objeto literal, y que también podemos definir contratos para esos objetos anidados utilizando interfaces.
+}
+
+const person03: Person = { // Aquí estamos creando un objeto literal que cumple con el contrato definido por la interfaz Person, es decir, el objeto person03 tiene las propiedades name, lastName y age, todas ellas son de tipo string o number.
+    name: 'Mauricio',
+    lastName: 'Morales',
+    age: 27,
+}
+
+// console.log(person01, person02);
+// console.log(person01);
+console.log(person03);
