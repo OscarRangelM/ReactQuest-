@@ -1,0 +1,9 @@
+const myArray: number[] = [1, 2, 3, 4, 5]; // Esta es la declaración de un array de números, el tipo de dato se indica entre corchetes después del tipo de dato, en este caso number[] indica que es un array de números.
+
+//para copiar el array se usa el spreader operator.
+const myArrayCopy: number[] = [...myArray]; // Esto es lo que se conoce como el operador de propagación, que nos permite copiar los elementos de un array a otro array, en este caso estamos copiando los elementos de myArray a myArrayCopy, pero myArrayCopy es un nuevo array, no es una referencia a myArray, por lo tanto, si modificamos myArrayCopy no afectará a myArray. Esto solo funciona con los elementos de primer nivel si hay un array dentro de otro array, el operador de propagación solo copiará la referencia del array interno, por lo tanto, si modificamos el array interno en myArrayCopy, también se modificará en myArray.
+
+// lo recomendado es hacer el structuredClone para esto ya que no afecta la referencai de memoria. 
+const myArrayCopy2: number[] = structuredClone(myArray); // Esto es lo que se conoce como el método structuredClone, que nos permite copiar un array de manera profunda, es decir, si hay un array dentro de otro array, el método structuredClone copiará el array interno en lugar de copiar la referencia del array interno, por lo tanto, si modificamos el array interno en myArrayCopy2, no se modificará en myArray. Este método es parte de la especificación de ECMAScript y está disponible en los navegadores modernos y en Node.js a partir de la versión 17.0.0. Es importante mencionar que el método structuredClone no es compatible con todos los tipos de datos, como funciones, símbolos, objetos con referencias circulares, entre otros.
+
+console.log(myArray, myArrayCopy, myArrayCopy2);
